@@ -1,3 +1,28 @@
+## Setup
+
+1. Commands to set up project
+
+   - `npx create-next-app@latest ./`
+
+     - TypeScript - yes
+     - ESLint - no
+     - Tailwind CSS - yes
+     - `src/` directory - no
+     - App Router - yes
+     - Customize import alias - no
+
+   - `npm run dev` - spin up local server
+
+## TypeScript
+
+1. At [(1:42:45)](https://youtu.be/A6g8xc0MoiY?si=XybQ1AVYHEdRWRWh&t=6165) - create directory `types` and add `index.ts` to specify our types .
+
+## Resources
+
+1. Download [project files for public folder here](https://youtu.be/A6g8xc0MoiY?si=ky4GdkVKYJ2_-xhH&t=6333)
+
+2. Project [github repo here](https://github.com/adrianhajdin/project_next13_car_showcase/tree/main)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
