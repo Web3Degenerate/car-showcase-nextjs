@@ -32,8 +32,9 @@ const Hero = () => {
         <div className="hero__image-container">
             <div className="hero__image">
                 <Image src="/hero.png" alt="hero" fill className="object-contain" />
-                <div className="hero__image-overlay" />
             </div>
+            {/* self closing hero__image-overlay div moved outside of hero__image div to get blue background to layout right (2:06:30) */}
+                <div className="hero__image-overlay" />
         </div>
 {/* end of image div */}
 

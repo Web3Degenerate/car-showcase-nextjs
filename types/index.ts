@@ -9,3 +9,9 @@ export interface CustomButtonProps {
     handleClick?: MouseEventHandler<HTMLButtonElement>;
     btnType?: "button" | "submit";
 }
+
+//Set types for SearchManufacturer component
+export interface SearchManufacturerProps {
+    manufacturer: string;
+    setManufacturer: (manufacturer: string) => void; //function takes manufacturer as a string and doesn't return anything, it's just a setter state.
+}

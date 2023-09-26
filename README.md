@@ -23,6 +23,17 @@
 
 2. Project [github repo here](https://github.com/adrianhajdin/project_next13_car_showcase/tree/main)
 
+3. Use [Headlessui.com](https://headlessui.com/) for the **Autocomplete** in `SearchManufacturer` component at [(2:16:10)](https://youtu.be/A6g8xc0MoiY?si=S74f4zzcQWaPY7SG&t=8170)
+
+   - Install with
+     - `npm i @headlessui/react`
+
+4. Rapid API [Car API by API Ninjas](https://rapidapi.com/apininjas/api/cars-by-api-ninjas)
+   - Added to [(2:35:55)](https://youtu.be/A6g8xc0MoiY?si=7A_XFbyzCsPALiYv&t=9355)
+   - Login and Click the [pricing tab and select the free option](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/pricing)
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

@@ -1,5 +1,6 @@
 // Created at (2:00:00): https://youtu.be/A6g8xc0MoiY?si=E5g5TnTn0pYO7Uz4&t=7200 
 export const manufacturers = [
+    " ",
     "Acura",
     "Alfa Romeo",
     "Aston Martin",
