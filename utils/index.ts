@@ -24,7 +24,7 @@ export async function fetchCars() {
 		'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
 	}
 
-    // const carModel = 'corolla'
+    // const carModel = 'corolla' - Start up again at (3:22:37): https://youtu.be/A6g8xc0MoiY?si=S396jPt1oL57-v6d&t=12157 
     const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla', 
         { headers: headers,  
         });

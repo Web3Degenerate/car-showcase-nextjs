@@ -34,6 +34,10 @@
    - Copy the **Code Snippet** for **JavaScript => Fetch** into new directory `utils/index.ts`
    -
 
+## Bookmarks
+
+- Start back up in `utils/index.ts` in the **fetchCars()** function.
+
 ---
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

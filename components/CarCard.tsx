@@ -7,6 +7,9 @@ import { CarProps } from '@/types';
 import CustomButton from './CustomButton';
 import { calculateCarRent } from '@/utils';
 
+//(3:03:56) import CarDetails
+import CarDetails from './CarDetails';
+
 interface CarCardProps {
     car: CarProps;
 }
@@ -107,7 +110,7 @@ const CarCard = ({ car }: CarCardProps) => {
 
     {/* Add Modal at (3:03:16): https://youtu.be/A6g8xc0MoiY?si=gKW9QlfJ3atZD0KF&t=10996 */}
 
-            {/* <CarDetails /> */}
+            <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} />
 
     </div>
   )
