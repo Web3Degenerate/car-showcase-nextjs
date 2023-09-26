@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { CarProps } from '@/types';
 
 import CustomButton from './CustomButton';
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, generateCarImageUrl } from '@/utils';
 
 //(3:03:56) import CarDetails
 import CarDetails from './CarDetails';
@@ -44,7 +44,8 @@ const CarCard = ({ car }: CarCardProps) => {
 
             <div className="relative w-full h-40 my-3 object-contain">
                 <Image 
-                    src="/hero.png"
+                    // src="/hero.png" // Updated with Imagin images (3:28:35)
+                    src={generateCarImageUrl(car)}
                     alt="car model"
                     // width={50}
                     // height={50}

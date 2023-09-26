@@ -29,14 +29,31 @@
      - `npm i @headlessui/react`
 
 4. Rapid API [Car API by API Ninjas](https://rapidapi.com/apininjas/api/cars-by-api-ninjas)
+
    - Added to [(2:35:55)](https://youtu.be/A6g8xc0MoiY?si=7A_XFbyzCsPALiYv&t=9355)
    - Login and Click the [pricing tab and select the free option](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/pricing)
    - Copy the **Code Snippet** for **JavaScript => Fetch** into new directory `utils/index.ts`
    -
 
+5. Imagin [Car Image API](https://www.imagin.studio/car-image-api) at [(3:24:26)](https://youtu.be/A6g8xc0MoiY?si=6bVZB3XSASafx1GI&t=12266)
+   - use code `hrjavascript-mastery`
+
 ## Bookmarks
 
-- Start back up in `utils/index.ts` in the **fetchCars()** function.
+- Configure API URL for `cdn.imagin.studio` at [(3:29:05)](https://youtu.be/A6g8xc0MoiY?si=mVbuZDoSRlaAIaH9&t=12545) in **next.config.js**
+  - specify the permissible domains as shown below.
+  - restart local server after editing next.config.js (or refresh may do)
+
+```js
+//next.config.js:
+const nextConfig = {
+  images: {
+    domains: ["cdn.imagin.studio"]
+  }
+}
+```
+
+- Implemented **Search** for specific car around [(3:32:35)](https://youtu.be/A6g8xc0MoiY?si=xM_2UQNHV5LBNCXl&t=12755)
 
 ---
 

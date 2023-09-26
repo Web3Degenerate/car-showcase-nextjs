@@ -10,6 +10,9 @@ import {Fragment} from 'react'
 //headless ui
 import {Dialog, Transition} from '@headlessui/react'
 
+//Pull in utils function to pull images from imagin API (3:30:00)
+import {generateCarImageUrl} from '@/utils';
+
 
 
 //(3:05:10) create props in the same file. 
@@ -73,21 +76,24 @@ const CarDetails = ({ isOpen, closeModal, car}: CarDetailsProps) => {
                                             <div className="flex-1 flex flex-col gap-3">
                                                 {/* image wrapper div */}
                                                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
-                                                            <Image src="/hero.png" alt="car placeholder" fill priority className="object-contain" />
+                                                            {/* <Image src="/hero.png" alt="car placeholder" fill priority className="object-contain" /> */}
+                                                            <Image src={generateCarImageUrl(car)} alt="car placeholder" fill priority className="object-contain" />
+                                                            
                                                     </div>
 
                                                     {/* div for three smaller images down below  */}
                                                     <div className="flex gap-3">
                                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                                    <Image src="/hero.png" alt="car placeholder" fill priority className="object-contain" />
+                                                                {/* replaced src="/hero.png" on all three images below with 'src={generateCarImageUrl(car, 'angle')}' */}
+                                                                    <Image src={generateCarImageUrl(car, '29')} alt="car placeholder" fill priority className="object-contain" />
                                                             </div>
 
                                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                                    <Image src="/hero.png" alt="car placeholder" fill priority className="object-contain" />
+                                                                    <Image src={generateCarImageUrl(car, '33')} alt="car placeholder" fill priority className="object-contain" />
                                                             </div>
 
                                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                                    <Image src="/hero.png" alt="car placeholder" fill priority className="object-contain" />
+                                                                    <Image src={generateCarImageUrl(car, '13')} alt="car placeholder" fill priority className="object-contain" />
                                                             </div>
                                                     </div>
                                             </div>
