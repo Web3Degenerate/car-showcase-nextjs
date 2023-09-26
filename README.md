@@ -31,6 +31,8 @@
 4. Rapid API [Car API by API Ninjas](https://rapidapi.com/apininjas/api/cars-by-api-ninjas)
    - Added to [(2:35:55)](https://youtu.be/A6g8xc0MoiY?si=7A_XFbyzCsPALiYv&t=9355)
    - Login and Click the [pricing tab and select the free option](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/pricing)
+   - Copy the **Code Snippet** for **JavaScript => Fetch** into new directory `utils/index.ts`
+   -
 
 ---
 

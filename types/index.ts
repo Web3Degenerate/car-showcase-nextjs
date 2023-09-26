@@ -8,10 +8,32 @@ export interface CustomButtonProps {
     containerStyles?: string;
     handleClick?: MouseEventHandler<HTMLButtonElement>;
     btnType?: "button" | "submit";
+    textStyles?: string;
+    rightIcon?: string;
+    isDisabled?: boolean;
 }
 
 //Set types for SearchManufacturer component
 export interface SearchManufacturerProps {
     manufacturer: string;
     setManufacturer: (manufacturer: string) => void; //function takes manufacturer as a string and doesn't return anything, it's just a setter state.
+}
+
+// Added (2:47:27) for CarCard component, copy and identify each field returned in the json from rapid Api via test call: https://rapidapi.com/apininjas/api/cars-by-api-ninjas
+//use ALT key and click each line to add ';' at the end of each type.
+export interface CarProps {
+    city_mpg:number;
+    class: string;
+    combination_mpg:number;
+    cylinders:number;
+    displacement:number;
+    drive:string;
+    fuel_type:string;
+    highway_mpg:number;
+    make:string;
+    model:string;
+    transmission:string;
+    // year?:number | undefined;
+    year:number;
+
 }

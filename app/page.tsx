@@ -1,8 +1,18 @@
 import Image from 'next/image'
-import {Hero, SearchBar, CustomFilter} from '@/components'
+import {Hero, SearchBar, CustomFilter, CarCard} from '@/components'
 
+//At (2:40:30) import rapid api utility function fetchCars: https://youtu.be/A6g8xc0MoiY?si=WkfftVejN6AfziSQ&t=9630
+import { fetchCars } from '@/utils';
 
-export default function Home() {
+export default async function Home() {  //(2:40:40) we can make entire Home function async to use await
+
+  const allCars = await fetchCars();
+
+  // console.log("RapidAPI all cars fetch request returned: ",allCars)
+  console.log(allCars)
+
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
   return (
     <main className="overflow-hidden">
         <Hero />
@@ -19,17 +29,29 @@ export default function Home() {
 
       {/* filters added (2:09:02) */}
                 <div className="home__filters">
-                      <SearchBar />
+                        <SearchBar />
 
-
-                      <div className="home__filter-container">
-                          <CustomFilter title="fuel" />
-                          <CustomFilter title="year" />
-
-
-                      </div>
-
+                        <div className="home__filter-container">
+                            <CustomFilter title="fuel" />
+                            <CustomFilter title="year" />
+                        </div>
                 </div>
+
+                {/* At (2:42:44) display cars from Rapid API fetchCars() */}
+                {!isDataEmpty ? (
+                  <section>
+                    <div className="home__cars-wrapper">
+                      {allCars?.map((car) => (
+                        <CarCard car={car} />
+                      ))}
+                    </div>
+                  </section>
+                ) : (
+                  <div className="home__error-container">
+                      <h2 className="text-black text-xl font-bold">Oops, no results</h2>
+                      <p>{allCars?.message}</p>
+                  </div>
+                )}
 
         </div>
 
