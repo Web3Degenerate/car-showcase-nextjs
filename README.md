@@ -41,8 +41,13 @@
 ## Bookmarks
 
 - Configure API URL for `cdn.imagin.studio` at [(3:29:05)](https://youtu.be/A6g8xc0MoiY?si=mVbuZDoSRlaAIaH9&t=12545) in **next.config.js**
+
   - specify the permissible domains as shown below.
   - restart local server after editing next.config.js (or refresh may do)
+
+- Search Params through URL working at [(3:44:35)](https://youtu.be/A6g8xc0MoiY?si=fBVOO5gcFWVa9SSD&t=13476)
+  - `http://localhost:3000/?model=q5&manufacturer=audi`
+  - At (3:44:53) update the search params in **SearchBar.tsx** to refetch the api call in **page.tsx** `fetchCars()` call.
 
 ```js
 //next.config.js:

@@ -37,3 +37,12 @@ export interface CarProps {
     year:number;
 
 }
+
+// At (3:47:00) create FilterProps type for utils fetchCars() function so page.tsx can pass the props from SearchBar.tsx
+export interface FilterProps {
+    manufacturer: string;
+    year: number;
+    fuel: string;
+    limit: number; // how many cars see at start.
+    model: string;
+}

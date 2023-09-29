@@ -4,9 +4,22 @@ import {Hero, SearchBar, CustomFilter, CarCard} from '@/components'
 //At (2:40:30) import rapid api utility function fetchCars: https://youtu.be/A6g8xc0MoiY?si=WkfftVejN6AfziSQ&t=9630
 import { fetchCars } from '@/utils';
 
-export default async function Home() {  //(2:40:40) we can make entire Home function async to use await
 
-  const allCars = await fetchCars();
+// export default async function Home() {  //(2:40:40) we can make entire Home function async to use await
+
+export default async function Home({ searchParams }) {  // (3:45:10) - get searchParams from url through PROPS
+
+
+  // const allCars = await fetchCars();
+  // (3:45:19) pass in searchParams for manufacturer and model: 
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || '', 
+    year: searchParams.year || 2022, 
+    fuel: searchParams.fuel || '', 
+    limit: searchParams.limit || 10, // how many cars see at start.
+    model: searchParams.model || '',
+  });
+
 
   // console.log("RapidAPI all cars fetch request returned: ",allCars)
   console.log(allCars)

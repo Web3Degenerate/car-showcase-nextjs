@@ -4,9 +4,12 @@
 
 // import SearchManufacturer  from "./SearchManufacturer";
 import {SearchManufacturer}  from "./";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import Image from 'next/image';
+
+// added useRouter (3:43:15)
+import { useRouter } from 'next/navigation'
 
 //Add SearchButton "component" here since we'll only be using it in SearchBar.tsx (3:33:55)
 //Can't use {} because 'SearchButton' cannot be used as a JSX component
@@ -35,12 +38,47 @@ const SearchBar = () => {
     const [manufacturer, setManufacturer] = useState('');
     const [model, setModel] = useState('');
 
+    const router = useRouter(); //call as a hook (3:43:25)
 
-    const handleSearch = () => {
+    const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
         //update cars we are showing by updating the fetch call to our API (3:33:30): https://youtu.be/A6g8xc0MoiY?si=dI6QPADENQymPNJX&t=12810
+        //(3:39:42) - change url parameters 
+        // next.js makes server side call for us
+        // (3:40:10): https://youtu.be/A6g8xc0MoiY?si=kzhg5dYWH-c5Rl_m&t=13210
+        e.preventDefault(); 
+
+        //check that we both manufacturer && model are not empty
+        if(manufacturer === '' && model === '') {
+          return alert("Please fill in either the Manfacturer or Model search inputs.");
+        }
+        
+        updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase())
 
     }
 
+
+
+    const updateSearchParams = (model: string, manufacturer: string) => {
+      const searchParams = new URLSearchParams(window.location.search); //pass current window location search
+
+        if (model) {
+          searchParams.set("model", model)      
+        }else{
+          searchParams.delete('model')
+        }
+
+
+        if (manufacturer) {
+          searchParams.set("manufacturer", manufacturer)         
+        }else{
+          searchParams.delete('manufacturer')
+        }
+
+        //Once we got the new searchParams (3:42:31)
+        const newPathname = `${window.location.pathname}?${searchParams.toString()}`
+
+        router.push(newPathname)
+    }
 
   return (
     <form className="searchbar" onSubmit={handleSearch}>
